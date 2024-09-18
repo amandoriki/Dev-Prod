@@ -25,7 +25,7 @@ contentitemexportablefields:
   contentitemfields:
     definitionid: ""
     fromServerVersion: 5.0.0
-    itemVersion: 1.15.6
+    itemVersion: 1.15.61
     packID: CommonScripts
     packName: Common Scripts
     packPropagationLabels:
@@ -33,7 +33,7 @@ contentitemexportablefields:
     prevname: ""
     propagationLabels: []
     toServerVersion: ""
-dockerimage: demisto/readpdf:1.0.0.93363
+dockerimage: demisto/readpdf:1.0.0.98214
 enabled: true
 engineinfo: {}
 mainengineinfo: {}
@@ -144,7 +144,7 @@ runas: DBotWeakRole
 runonce: false
 script: |
   register_module_line('ReadPDFFileV2', 'start', __line__())
-  ### pack version: 1.15.6
+  demisto.debug('pack name = Common Scripts, pack version = 1.15.61')
 
 
 
@@ -387,9 +387,9 @@ script: |
       html_file_names = get_files_names_in_path(output_folder, "*.html")
       html_content = ""
       for file_name in html_file_names:
-          with open(file_name) as f:
+          with open(file_name, "rb") as f:
               for line in f:
-                  html_content += html.unescape(line) if unescape_url else line
+                  html_content += html.unescape(str(line)) if unescape_url else str(line)
       return html_content
 
 
@@ -434,7 +434,7 @@ script: |
               results.append(file)
       all_pdf_data = ""
       if metadata:
-          for k, v in metadata.items():
+          for _, v in metadata.items():
               all_pdf_data += str(v)
       if text:
           all_pdf_data += text
@@ -639,7 +639,7 @@ script: |
                   page_object = page_sliced.get_object()
 
                   # Extracts the PDF's Annots (Annotations and Commenting):
-                  if annots := page_object.get('/Annots'):
+                  if annots := page_object.get('/Annots'):  # type: ignore[union-attr]
                       if not isinstance(annots, PyPDF2.generic.ArrayObject):
                           annots = [annots]
 
