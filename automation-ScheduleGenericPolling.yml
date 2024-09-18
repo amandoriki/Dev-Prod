@@ -45,7 +45,7 @@ contentitemexportablefields:
   contentitemfields:
     definitionid: ""
     fromServerVersion: 5.0.0
-    itemVersion: 1.15.6
+    itemVersion: 1.15.61
     packID: CommonScripts
     packName: Common Scripts
     packPropagationLabels:
@@ -53,7 +53,7 @@ contentitemexportablefields:
     prevname: ""
     propagationLabels: []
     toServerVersion: ""
-dockerimage: demisto/python3:3.10.13.89009
+dockerimage: demisto/python3:3.11.9.107902
 enabled: true
 engineinfo: {}
 mainengineinfo: {}
@@ -63,7 +63,7 @@ runas: DBotWeakRole
 runonce: false
 script: |
   register_module_line('ScheduleGenericPolling', 'start', __line__())
-  ### pack version: 1.15.6
+  demisto.debug('pack name = Common Scripts, pack version = 1.15.61')
 
 
   import uuid
@@ -145,8 +145,9 @@ script: |
                 pendingIds="{}" interval="{}" timeout="{}" tag="{}" additionalPollingCommandArgNames="{}" \
                 additionalPollingCommandArgValues="{}"'''.format(ids.replace('"', r'\"'), pollingCommand,
                                                                  pollingCommandArgName, playbookId,
-                                                                 dt.replace('"', r'\"'), interval, timeout,
-                                                                 tag, args_names, args_values)
+                                                                 dt.replace('"', r'\"'), interval, timeout, tag,
+                                                                 args_names.replace('"', r'\"'),
+                                                                 args_values.replace('"', r'\"'),)
       if extract_mode:
           command_string += f" auto-extract={extract_mode} extractMode={extract_mode}"
 
@@ -171,10 +172,8 @@ script: |
       if interval <= 0 or timeout <= 0:
           return_error("Interval and timeout must be positive numbers")
 
-      args_names = args.get('additionalPollingCommandArgNames').strip() \
-          if args.get('additionalPollingCommandArgNames') else None
-      args_values = args.get('additionalPollingCommandArgValues').strip() \
-          if args.get('additionalPollingCommandArgValues') else None
+      args_names = (args.get('additionalPollingCommandArgNames', '') or '').strip()
+      args_values = (args.get('additionalPollingCommandArgValues', '') or '').strip()
 
       # Verify correct dt path (does not verify condition!)
       if not demisto.dt(demisto.context(), dt):
