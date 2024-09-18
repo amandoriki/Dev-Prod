@@ -1,4 +1,4 @@
-name: F123
+name: Dev-to-Prod
 
 on: 
   push:
