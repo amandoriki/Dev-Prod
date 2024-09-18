@@ -47,7 +47,7 @@ contentitemexportablefields:
   contentitemfields:
     definitionid: ""
     fromServerVersion: 5.0.0
-    itemVersion: 1.15.6
+    itemVersion: 1.15.61
     packID: CommonScripts
     packName: Common Scripts
     packPropagationLabels:
@@ -63,7 +63,7 @@ pswd: ""
 runas: DBotWeakRole
 runonce: false
 script: |-
-  // pack version: 1.15.6
+  // pack version: 1.15.61
   /**
    * GenericPollingScheduledTask
    *   This task is ment to be scheduled by the ScheduleGenericPolling automation
@@ -169,7 +169,7 @@ script: |-
       }
       var cmd = '!GenericPollingScheduledTask pollingCommand="' + pollingCommand + '" pollingCommandArgName="' + pollingCommandArgName + '"' + playbookIdStr;
       cmd += ' ids="' + idsStr + '" pendingIds="' + pendingIds.replace(/"/g,'\\"') + '" interval="' + interval + '" timeout="' + (parseInt(timeout) - parseInt(interval)) + '" tag="' + tag + '"';
-      cmd += ' additionalPollingCommandArgNames="' + additionalArgNames + '" additionalPollingCommandArgValues="' + additionalArgValues + '"';
+      cmd += ' additionalPollingCommandArgNames="' + additionalArgNames.replace(/"/g,'\\"') + '" additionalPollingCommandArgValues="' + additionalArgValues.replace(/"/g,'\\"') + '"';
       if (extractMode !== undefined) {
           cmd += ' extractMode="' + extractMode + '" auto-extract="' + extractMode + '"';
       }
