@@ -25,7 +25,7 @@ contentitemexportablefields:
   contentitemfields:
     definitionid: ""
     fromServerVersion: 6.5.0
-    itemVersion: 1.15.6
+    itemVersion: 1.15.61
     packID: CommonScripts
     packName: Common Scripts
     packPropagationLabels:
@@ -33,7 +33,7 @@ contentitemexportablefields:
     prevname: ""
     propagationLabels: []
     toServerVersion: ""
-dockerimage: demisto/mlurlphishing:1.0.0.90588
+dockerimage: demisto/mlurlphishing:1.0.0.103417
 enabled: true
 engineinfo: {}
 mainengineinfo: {}
@@ -43,7 +43,7 @@ runas: DBotRole
 runonce: false
 script: |
   register_module_line('DBotUpdateLogoURLPhishing', 'start', __line__())
-  ### pack version: 1.15.6
+  demisto.debug('pack name = Common Scripts, pack version = 1.15.61')
 
 
 
@@ -205,7 +205,7 @@ script: |
       y_offset = 0
       new_size = (width_new, height_new)
       for im in images:
-          im = im.resize(new_size)
+          im = im.resize(new_size)  # type:ignore[assignment]
           if number_image_x >= number_of_image_per_row:
               x_offset = 0
               y_offset += height_new
