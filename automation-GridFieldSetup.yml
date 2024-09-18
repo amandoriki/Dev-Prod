@@ -33,6 +33,36 @@ args:
 - description: A value for the 10th key. (Can be a string or context path or `TIMESTAMP`
     to get the current timestamp in ISO format.)
   name: val10
+- description: A value for the 11th key. (Can be a string or context path or `TIMESTAMP`
+    to get the current timestamp in ISO format.)
+  name: val11
+- description: A value for the 12th key. (Can be a string or context path or `TIMESTAMP`
+    to get the current timestamp in ISO format.)
+  name: val12
+- description: A value for the 13th key. (Can be a string or context path or `TIMESTAMP`
+    to get the current timestamp in ISO format.)
+  name: val13
+- description: A value for the 14th key. (Can be a string or context path or `TIMESTAMP`
+    to get the current timestamp in ISO format.)
+  name: val14
+- description: A value for the 15th key. (Can be a string or context path or `TIMESTAMP`
+    to get the current timestamp in ISO format.)
+  name: val15
+- description: A value for the 16th key. (Can be a string or context path or `TIMESTAMP`
+    to get the current timestamp in ISO format.)
+  name: val16
+- description: A value for the 17th key. (Can be a string or context path or `TIMESTAMP`
+    to get the current timestamp in ISO format.)
+  name: val17
+- description: A value for the 18th key. (Can be a string or context path or `TIMESTAMP`
+    to get the current timestamp in ISO format.)
+  name: val18
+- description: A value for the 19th key. (Can be a string or context path or `TIMESTAMP`
+    to get the current timestamp in ISO format.)
+  name: val19
+- description: A value for the 20th key. (Can be a string or context path or `TIMESTAMP`
+    to get the current timestamp in ISO format.)
+  name: val20
 - description: Grid field to populate.
   name: gridfield
   required: true
@@ -54,7 +84,7 @@ contentitemexportablefields:
   contentitemfields:
     definitionid: ""
     fromServerVersion: 6.5.0
-    itemVersion: 1.15.6
+    itemVersion: 1.15.61
     packID: CommonScripts
     packName: Common Scripts
     packPropagationLabels:
@@ -62,7 +92,7 @@ contentitemexportablefields:
     prevname: ""
     propagationLabels: []
     toServerVersion: ""
-dockerimage: demisto/python3:3.10.13.89009
+dockerimage: demisto/python3:3.10.14.99144
 enabled: true
 engineinfo: {}
 mainengineinfo: {}
@@ -72,7 +102,7 @@ runas: DBotWeakRole
 runonce: false
 script: |
   register_module_line('GridFieldSetup', 'start', __line__())
-  ### pack version: 1.15.6
+  demisto.debug('pack name = Common Scripts, pack version = 1.15.61')
 
 
 
