@@ -172,20 +172,37 @@
 							{
 								"dropEffect": "move",
 								"endCol": 2,
-								"fieldId": "timestamp",
-								"height": 22,
-								"id": "e988b8e0-76c1-11ec-ad89-f112118947c2",
+								"fieldId": "enrichmentexcluded",
+								"filters": [
+									[
+										{
+											"id": 0,
+											"ignoreCase": false,
+											"left": {
+												"isContext": true,
+												"value": {
+													"simple": "enrichmentExcluded"
+												}
+											},
+											"operator": "isTrue",
+											"right": null,
+											"type": "boolean"
+										}
+									]
+								],
+								"height": 26,
+								"id": "471e478f-d18e-44cc-929c-285a60c15399",
 								"index": 0,
-								"listId": "main-e2c8c970-a09d-11e9-8956-390f602b039a",
+								"listId": "pniqfz7ye4-main-e2c8c970-a09d-11e9-8956-390f602b039a",
 								"sectionItemType": "field",
 								"startCol": 0
 							},
 							{
 								"dropEffect": "move",
 								"endCol": 2,
-								"fieldId": "modified",
-								"height": 22,
-								"id": "2ae6c020-9860-11eb-a24d-4941fb0e06df",
+								"fieldId": "timestamp",
+								"height": 26,
+								"id": "e988b8e0-76c1-11ec-ad89-f112118947c2",
 								"index": 1,
 								"listId": "main-e2c8c970-a09d-11e9-8956-390f602b039a",
 								"sectionItemType": "field",
@@ -194,10 +211,21 @@
 							{
 								"dropEffect": "move",
 								"endCol": 2,
-								"fieldId": "stixid",
-								"height": 22,
-								"id": "05a03080-76c2-11ec-ad89-f112118947c2",
+								"fieldId": "modified",
+								"height": 26,
+								"id": "2ae6c020-9860-11eb-a24d-4941fb0e06df",
 								"index": 2,
+								"listId": "main-e2c8c970-a09d-11e9-8956-390f602b039a",
+								"sectionItemType": "field",
+								"startCol": 0
+							},
+							{
+								"dropEffect": "move",
+								"endCol": 2,
+								"fieldId": "stixid",
+								"height": 26,
+								"id": "05a03080-76c2-11ec-ad89-f112118947c2",
+								"index": 4,
 								"listId": "pniqfz7ye4-main-e2c8c970-a09d-11e9-8956-390f602b039a",
 								"sectionItemType": "field",
 								"startCol": 0
@@ -205,18 +233,18 @@
 							{
 								"endCol": 2,
 								"fieldId": "description",
-								"height": 44,
+								"height": 52,
 								"id": "0a479190-9879-11ec-8a36-89f2ae31e8cd",
-								"index": 3,
+								"index": 5,
 								"sectionItemType": "field",
 								"startCol": 0
 							},
 							{
 								"endCol": 2,
 								"fieldId": "internal",
-								"height": 22,
+								"height": 26,
 								"id": "299ca380-ac60-11e9-8443-17259235cee7",
-								"index": 4,
+								"index": 6,
 								"sectionItemType": "field",
 								"startCol": 0
 							},
@@ -224,9 +252,9 @@
 								"dropEffect": "move",
 								"endCol": 2,
 								"fieldId": "comment",
-								"height": 22,
+								"height": 26,
 								"id": "0b9dd200-a09e-11e9-8956-390f602b039a",
-								"index": 5,
+								"index": 7,
 								"listId": "e2c8c970-a09d-11e9-8956-390f602b039a",
 								"sectionItemType": "field",
 								"startCol": 0
@@ -234,27 +262,27 @@
 							{
 								"endCol": 2,
 								"fieldId": "blocked",
-								"height": 22,
+								"height": 26,
 								"id": "fe587b20-76c1-11ec-ad89-f112118947c2",
-								"index": 6,
-								"sectionItemType": "field",
-								"startCol": 0
-							},
-							{
-								"endCol": 2,
-								"fieldId": "tags",
-								"height": 22,
-								"id": "1cf1e850-4e74-11ea-8bf6-67db400d7da5",
 								"index": 7,
 								"sectionItemType": "field",
 								"startCol": 0
 							},
 							{
 								"endCol": 2,
-								"fieldId": "trafficlightprotocol",
-								"height": 22,
-								"id": "b36304a0-b6dd-11ea-842d-c3903a6d3bd1",
+								"fieldId": "tags",
+								"height": 26,
+								"id": "1cf1e850-4e74-11ea-8bf6-67db400d7da5",
 								"index": 8,
+								"sectionItemType": "field",
+								"startCol": 0
+							},
+							{
+								"endCol": 2,
+								"fieldId": "trafficlightprotocol",
+								"height": 26,
+								"id": "b36304a0-b6dd-11ea-842d-c3903a6d3bd1",
+								"index": 9,
 								"sectionItemType": "field",
 								"startCol": 0
 							},
@@ -268,7 +296,7 @@
 								"fieldId": "",
 								"height": 44,
 								"id": "0ade4320-a751-11eb-8813-85174f038837",
-								"index": 9,
+								"index": 10,
 								"name": "Add tags",
 								"scriptId": "Builtin|||appendIndicatorField",
 								"sectionItemType": "button",
@@ -285,7 +313,7 @@
 								"fieldId": "",
 								"height": 44,
 								"id": "08a25ce0-a751-11eb-8813-85174f038837",
-								"index": 9,
+								"index": 10,
 								"listId": "main-0e19dbd0-4e74-11ea-8bf6-67db400d7da5",
 								"name": "Remove tags",
 								"scriptId": "Builtin|||removeIndicatorField",
@@ -370,6 +398,41 @@
 								"args": {},
 								"endCol": 1,
 								"fieldId": "",
+								"filters": [
+									[
+										{
+											"id": 0,
+											"ignoreCase": false,
+											"left": {
+												"isContext": true,
+												"value": {
+													"simple": "enrichmentExcluded"
+												}
+											},
+											"operator": "isFalse",
+											"right": {
+												"isContext": false,
+												"value": {
+													"simple": ""
+												}
+											},
+											"type": "boolean"
+										},
+										{
+											"id": 1,
+											"ignoreCase": false,
+											"left": {
+												"isContext": true,
+												"value": {
+													"simple": "enrichmentExcluded"
+												}
+											},
+											"operator": "isNotExists",
+											"right": null,
+											"type": "boolean"
+										}
+									]
+								],
 								"height": 44,
 								"id": "e3595b00-aa49-11ea-9e46-5ff91c1cf9b7",
 								"index": 0,
@@ -380,11 +443,42 @@
 							},
 							{
 								"args": {},
+								"buttonClass": null,
+								"endCol": 1,
+								"fieldId": "",
+								"filters": [
+									[
+										{
+											"id": 0,
+											"ignoreCase": false,
+											"left": {
+												"isContext": true,
+												"value": {
+													"simple": "enrichmentExcluded"
+												}
+											},
+											"operator": "isTrue",
+											"right": null,
+											"type": "boolean"
+										}
+									]
+								],
+								"height": 44,
+								"hexColor": "#979797",
+								"id": "064193cb-bd05-4f04-b90d-c0dfb561b8ad",
+								"index": 1,
+								"name": "Enrich indicator",
+								"scriptId": "enrich_exclude_button",
+								"sectionItemType": "button",
+								"startCol": 0
+							},
+							{
+								"args": {},
 								"endCol": 2,
 								"fieldId": "",
 								"height": 44,
 								"id": "012a4ae0-bf71-11ea-b085-3f354e53d3e6",
-								"index": 1,
+								"index": 0,
 								"name": "Expire indicator",
 								"scriptId": "Builtin|||expireIndicators",
 								"sectionItemType": "button",
@@ -473,6 +567,12 @@
 					}
 				],
 				"type": "custom"
+			},
+			{
+				"hidden": false,
+				"id": "canvas",
+				"name": "Canvas",
+				"type": "canvas"
 			}
 		]
 	},
@@ -528,10 +628,36 @@
 						"items": [
 							{
 								"endCol": 2,
-								"fieldId": "timestamp",
-								"height": 22,
-								"id": "9dd4e1e0-84ee-11ec-a589-e73aadc98c9a",
+								"fieldId": "enrichmentexcluded",
+								"filters": [
+									[
+										{
+											"id": 0,
+											"ignoreCase": false,
+											"left": {
+												"isContext": true,
+												"value": {
+													"simple": "enrichmentExcluded"
+												}
+											},
+											"operator": "isTrue",
+											"right": null,
+											"type": "boolean"
+										}
+									]
+								],
+								"height": 26,
+								"id": "b4da8980-f4bc-4174-8ae7-083ac2f23644",
 								"index": 0,
+								"sectionItemType": "field",
+								"startCol": 0
+							},
+							{
+								"endCol": 2,
+								"fieldId": "timestamp",
+								"height": 26,
+								"id": "9dd4e1e0-84ee-11ec-a589-e73aadc98c9a",
+								"index": 1,
 								"sectionItemType": "field",
 								"startCol": 0
 							},
@@ -539,19 +665,8 @@
 								"dropEffect": "move",
 								"endCol": 2,
 								"fieldId": "modified",
-								"height": 22,
+								"height": 26,
 								"id": "a6910ed0-84ee-11ec-a589-e73aadc98c9a",
-								"index": 1,
-								"listId": "indicator-quick-view-info-34c55dc0-ba19-11ea-96e1-0b84fdedf11e",
-								"sectionItemType": "field",
-								"startCol": 0
-							},
-							{
-								"dropEffect": "move",
-								"endCol": 2,
-								"fieldId": "stixid",
-								"height": 22,
-								"id": "aa81a9f0-84ee-11ec-a589-e73aadc98c9a",
 								"index": 2,
 								"listId": "indicator-quick-view-info-34c55dc0-ba19-11ea-96e1-0b84fdedf11e",
 								"sectionItemType": "field",
@@ -560,10 +675,21 @@
 							{
 								"dropEffect": "move",
 								"endCol": 2,
-								"fieldId": "internal",
-								"height": 22,
-								"id": "63f149e0-9882-11eb-a24d-4941fb0e06df",
+								"fieldId": "stixid",
+								"height": 26,
+								"id": "aa81a9f0-84ee-11ec-a589-e73aadc98c9a",
 								"index": 3,
+								"listId": "indicator-quick-view-info-34c55dc0-ba19-11ea-96e1-0b84fdedf11e",
+								"sectionItemType": "field",
+								"startCol": 0
+							},
+							{
+								"dropEffect": "move",
+								"endCol": 2,
+								"fieldId": "internal",
+								"height": 26,
+								"id": "63f149e0-9882-11eb-a24d-4941fb0e06df",
+								"index": 4,
 								"listId": "indicator-quick-view-info-34c55dc0-ba19-11ea-96e1-0b84fdedf11e",
 								"sectionItemType": "field",
 								"startCol": 0
@@ -571,27 +697,27 @@
 							{
 								"endCol": 2,
 								"fieldId": "blocked",
-								"height": 22,
+								"height": 26,
 								"id": "b514e0d0-84ee-11ec-a589-e73aadc98c9a",
-								"index": 4,
-								"sectionItemType": "field",
-								"startCol": 0
-							},
-							{
-								"endCol": 2,
-								"fieldId": "trafficlightprotocol",
-								"height": 22,
-								"id": "1a6f45b0-c02e-11ea-8c96-378efcdc37ad",
 								"index": 5,
 								"sectionItemType": "field",
 								"startCol": 0
 							},
 							{
 								"endCol": 2,
-								"fieldId": "tags",
-								"height": 22,
-								"id": "indicator-quick-view-info-tags-field",
+								"fieldId": "trafficlightprotocol",
+								"height": 26,
+								"id": "1a6f45b0-c02e-11ea-8c96-378efcdc37ad",
 								"index": 6,
+								"sectionItemType": "field",
+								"startCol": 0
+							},
+							{
+								"endCol": 2,
+								"fieldId": "tags",
+								"height": 26,
+								"id": "indicator-quick-view-info-tags-field",
+								"index": 7,
 								"sectionItemType": "field",
 								"startCol": 0
 							}
@@ -647,7 +773,7 @@
 			}
 		]
 	},
-	"itemVersion": "3.5.4",
+	"itemVersion": "3.5.17",
 	"locked": false,
 	"mobile": null,
 	"name": "Email Indicator",
