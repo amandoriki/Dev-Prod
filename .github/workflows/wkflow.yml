@@ -1,1 +1,54 @@
-test
+name: Dev-to-Prod
+
+on: 
+  push:
+     branches:
+       - Dev  # Trigger the workflow on pushes to 'dev'
+
+jobs:
+  copy-content:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      # Step 2: Set up Git user information (required for making commits)
+      - name: Set up Git user
+        run: |
+          git config --global user.name "amandoriki"
+          git config --global user.email "amandoriki92@yahoo.com"
+      
+      # Step 3: Fetch all branches
+      - name: Fetch all branches
+        run: git fetch --all
+      
+      # Step 4: Checkout 'Dev' to get its contents
+      - name: Checkout Dev
+        run: git checkout Dev
+
+      # Step 5: Copy the contents of branch-1 to a temporary location
+      - name: Copy content from dev
+        run: |
+          git pull origin Dev  # Ensure you have the latest changes
+          cp -r . ../Dev-content  # Copy content to a temporary location
+
+      # Step 6: Switch to 'Prod'
+      - name: Checkout Prod
+        run: |
+          git checkout Prod
+          git pull origin Prod
+
+      # Step 7: Copy the content from Dev to Prod
+      - name: Copy content to Prod
+        run: |
+          cp -r ../Dev-content/* .  # Copy content from the temporary location to branch-2
+          git add .
+          git commit -m "Sync content from Dev to Prod"
+
+      # Step 8: Push changes to 'Prod'
+      - name: Push changes to Prod
+        run: git push origin Prod
+        env:
+          GITHUB_TOKEN: ${ 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 }  # Use the GitHub token to push changes
