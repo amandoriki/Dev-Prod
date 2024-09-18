@@ -1,9 +1,9 @@
 name: Dev-to-Prod
 
-on:
-  push:
-     branches:
-        Dev  # Trigger the workflow on pushes to 'dev'
+on: push
+#  push:
+#     branches:
+#       - Dev  # Trigger the workflow on pushes to 'dev'
 
 jobs:
   copy-content:
