@@ -1,3 +1,0 @@
-Hola
-finale
-come on
