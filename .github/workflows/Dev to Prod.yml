@@ -1,8 +1,8 @@
 name: Dev-to-Prod
-'on':
-  push:
-    branches:
-      - dev
+'on': push
+#  push:
+#    branches:
+#      - dev
 jobs:
   copy-content:
     runs-on: ubuntu-latest
