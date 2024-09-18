@@ -25,14 +25,14 @@ jobs:
         run: git fetch --all
       
       # Step 4: Checkout 'Dev' to get its contents
-      - name: Checkout dev
-        run: git checkout dev
+      - name: Checkout Dev
+        run: git checkout Dev
 
       # Step 5: Copy the contents of branch-1 to a temporary location
       - name: Copy content from dev
         run: |
-          git pull origin dev  # Ensure you have the latest changes
-          cp -r . ../dev-content  # Copy content to a temporary location
+          git pull origin Dev  # Ensure you have the latest changes
+          cp -r . ../Dev-content  # Copy content to a temporary location
 
       # Step 6: Switch to 'Prod'
       - name: Checkout prod
