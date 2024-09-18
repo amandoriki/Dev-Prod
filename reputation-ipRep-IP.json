@@ -19,7 +19,7 @@
 			"complex": {
 				"accessor": "ASOwner",
 				"filters": [],
-				"root": "URL",
+				"root": "IP",
 				"transformers": [
 					{
 						"operator": "uniq"
@@ -379,7 +379,7 @@
 	"formatScript": "UnEscapeIPs",
 	"fromServerVersion": "5.5.0",
 	"id": "ipRep",
-	"itemVersion": "3.5.4",
+	"itemVersion": "3.5.17",
 	"layout": "ipRep",
 	"legacyNames": null,
 	"locked": false,
