@@ -537,6 +537,12 @@
 					}
 				],
 				"type": "custom"
+			},
+			{
+				"hidden": false,
+				"id": "canvas",
+				"name": "Canvas",
+				"type": "canvas"
 			}
 		]
 	},
@@ -689,7 +695,7 @@
 			}
 		]
 	},
-	"itemVersion": "3.5.4",
+	"itemVersion": "3.5.17",
 	"locked": false,
 	"mobile": null,
 	"name": "Registry Key Indicator",
