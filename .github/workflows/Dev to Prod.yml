@@ -1,9 +1,9 @@
 name: Dev-to-Prod
 
-on: push
-#  push:
-#    branches:
-#      - dev  # Trigger the workflow on pushes to 'dev'
+on:
+  push:
+     branches:
+       - Dev  # Trigger the workflow on pushes to 'dev'
 
 jobs:
   copy-content:
@@ -35,20 +35,20 @@ jobs:
           cp -r . ../Dev-content  # Copy content to a temporary location
 
       # Step 6: Switch to 'Prod'
-      - name: Checkout prod
+      - name: Checkout Prod
         run: |
-          git checkout prod
-          git pull origin prod
+          git checkout Prod
+          git pull origin Prod
 
       # Step 7: Copy the content from Dev to Prod
-      - name: Copy content to prod
+      - name: Copy content to Prod
         run: |
-          cp -r ../dev-content/* .  # Copy content from the temporary location to branch-2
+          cp -r ../Dev-content/* .  # Copy content from the temporary location to branch-2
           git add .
-          git commit -m "Sync content from dev to prod"
+          git commit -m "Sync content from Dev to Prod"
 
       # Step 8: Push changes to 'Prod'
-      - name: Push changes to prod
-        run: git push origin prod
+      - name: Push changes to Prod
+        run: git push origin Prod
         env:
           GITHUB_TOKEN: ${ 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 }  # Use the GitHub token to push changes
